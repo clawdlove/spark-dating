@@ -119,6 +119,30 @@
 - **iOS:** Jetpack Compose for iOS (shared business logic, native UI where needed)
 - **Future-proof:** Single codebase, easier maintenance, faster iteration
 
+### Marketing Site (Vercel)
+
+- **Framework:** Next.js 14 + Tailwind CSS
+- **Hosting:** Vercel (auto-deploy from GitHub)
+- **Features:**
+  - Landing page with hero, features, stats
+  - Google Play download button
+  - iOS waitlist signup form
+  - SEO optimized (OG tags, meta description)
+  - Dark theme matching app branding
+
+### Web Admin Panel
+
+- **Framework:** Next.js (same repo or separate)
+- **Purpose:** Internal tool for moderation and management
+- **Hosting:** Vercel (password protected via middleware)
+- **Features:**
+  - User management (view, suspend, delete profiles)
+  - Report queue (review flagged users)
+  - Verification queue (manual review of income/employment claims)
+  - Analytics dashboard (DAU, MAU, match rates, revenue)
+  - Content moderation (view reported photos/messages)
+  - Broadcast messaging (notify all users)
+
 ### Platform (Android)
 - **Min SDK:** 24 (Android 7.0)
 - **Target SDK:** 34 (Android 14)
@@ -163,6 +187,12 @@
 
 ## 9. Roadmap
 
+### Phase 0 — Pre-Development (Week 0)
+- [x] PRD finalization
+- [x] Database schema (Supabase)
+- [x] Marketing site (Next.js → Vercel)
+- [x] CI/CD setup (GitHub Actions)
+
 ### Phase 1 — MVP (Weeks 1–10)
 - KMP project setup + shared module
 - Android: Compose UI + navigation
@@ -184,6 +214,12 @@
 - Ads integration
 - Analytics + A/B testing
 - Performance optimization
+
+### Phase 4 — Admin & Management (Parallel)
+- Web admin panel (Next.js)
+- User moderation tools
+- Verification review queue
+- Analytics dashboard
 
 ---
 
