@@ -1,72 +1,3 @@
-# Spark Dating App - Marketing Landing Page
-
-A sleek, conversion-focused landing page built with Next.js and Tailwind CSS, ready to deploy on Vercel.
-
-## 🚀 Quick Deploy
-
-```bash
-# Clone and deploy
-npx create-next-app@latest spark-marketing
-cd spark-marketing
-# Copy the files below into app/page.tsx, etc.
-
-# Deploy to Vercel
-vercel deploy
-```
-
-## Project Structure
-
-```
-spark-marketing/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── globals.css
-│   └── layout.tsx
-├── public/
-│   ├── logo.svg
-│   └── og-image.png
-├── tailwind.config.ts
-├── next.config.js
-├── package.json
-└── tsconfig.json
-```
-
-## Files
-
-### app/layout.tsx
-```tsx
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Spark — Quality Dating for Ambitious Singles',
-  description: 'Connect with like-minded, successful individuals. Wealth-conscious dating app for quality connections.',
-  openGraph: {
-    title: 'Spark — Quality Dating for Ambitious Singles',
-    description: 'Connect with like-minded, successful individuals.',
-    images: ['/og-image.png'],
-  },
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
-}
-```
-
-### app/page.tsx
-```tsx
 'use client'
 
 import { useState } from 'react'
@@ -78,7 +9,6 @@ export default function Home() {
 
   const handleWaitlist = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Send to Supabase or newsletter service
     setSubmitted(true)
   }
 
@@ -173,7 +103,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Verified Profiles</h3>
             <p className="text-slate-400">
-              Income and employment verification builds trust. Know who you're talking to.
+              Income and employment verification builds trust. Know who you&apos;re talking to.
             </p>
           </div>
           {/* Feature 2 */}
@@ -256,7 +186,7 @@ export default function Home() {
           </p>
           {submitted ? (
             <div className="text-center text-rose-400 font-medium">
-              ✓ You're on the list! We'll be in touch.
+              ✓ You&apos;re on the list! We&apos;ll be in touch.
             </div>
           ) : (
             <form onSubmit={handleWaitlist} className="flex flex-col gap-4">
@@ -301,79 +231,3 @@ export default function Home() {
     </main>
   )
 }
-```
-
-### tailwind.config.ts
-```ts
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        rose: {
-          400: '#fb7185',
-          500: '#f43f5e',
-          600: '#e11d48',
-        },
-      },
-    },
-  },
-  plugins: [],
-}
-export default config
-```
-
-### package.json
-```json
-{
-  "name": "spark-marketing",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "14.2.0",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5"
-  }
-}
-```
-
-## Customization
-
-1. **Replace the app link** in the download buttons with your actual Google Play URL
-2. **Update stats** with real numbers once you have them
-3. **Connect the waitlist form** to Supabase or any email service (ConvertKit, Mailchimp, etc.)
-4. **Add app screenshots** in a hero gallery section
-5. **Configure OG image** at `public/og-image.png` (1200x630px)
-
-## Deployment
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-
-# Or connect GitHub repo in Vercel dashboard for automatic deploys
-```
