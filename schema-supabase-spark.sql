@@ -59,8 +59,9 @@ CREATE TABLE profiles (
     show_in_online BOOLEAN DEFAULT TRUE
 );
 
--- Index for discovery queries
-CREATE INDEX idx_profiles_location ON profiles(distance(latitude, longitude, 0, 0));
+-- Index for discovery queries (simple separate indexes for now)
+CREATE INDEX idx_profiles_lat ON profiles(latitude);
+CREATE INDEX idx_profiles_lon ON profiles(longitude);
 CREATE INDEX idx_profiles_active ON profiles(last_active DESC);
 CREATE INDEX idx_profiles_gender ON profiles(gender);
 
